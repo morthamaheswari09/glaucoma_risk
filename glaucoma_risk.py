@@ -63,21 +63,21 @@ def preprocess_input(age,Intraocular_Pressure,Cup_to_Disc_Ratio,Pachymetry,gende
     df['Gender_Female'] = 1 if gender == 'Female' else 0
     df['Gender_Male'] = 1 if gender == 'Male' else 0
     
-    df['Diagnosis_Galucoma'] = 1 if diagnosis == 'Glaucoma' else 0
-    df['Diagnosis_No Galucoma'] = 1 if diagnosis == 'No Glaucoma' else 0
+    df['Diagnosis_Glaucoma'] = 1 if diagnosis == 'Glaucoma' else 0
+    df['Diagnosis_No Glaucoma'] = 1 if diagnosis == 'No Glaucoma' else 0
 
     df['Family History_Yes'] = 1 if family_history == 'Yes' else 0
     df['Family History_No'] = 1 if family_history == 'No' else 0
 
     df['Cataract Status_Present'] = 1 if Cataract_Status == 'Present' else 0
-    df['Cataract Status_absent'] = 1 if Cataract_Status == 'Absent' else 0
+    df['Cataract Status_Absent'] = 1 if Cataract_Status == 'Absent' else 0
 
     df['Angle Closure Status_Open'] = 1 if Angle_Closure_Status == 'Open' else 0
     df['Angle Closure Status_Closed'] = 1 if Angle_Closure_Status == 'Closed' else 0
 
     vam_cat=['LogMAR 0.1', '20/40', 'LogMAR 0.0', '20/20']
     for i in vam_cat:
-        df[f' Visual Acuity Measurements_{i}'] = 1 if vam == i else 0
+        df[f'Visual Acuity Measurements_{i}'] = 1 if vam == i else 0
 
     # Ensure all expected columns are present in the correct order
     expected_columns = [
@@ -129,6 +129,7 @@ st.write("""
 
 
 # %%
+
 
 
 
