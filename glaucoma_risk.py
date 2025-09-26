@@ -12,7 +12,7 @@ st.title("Glaucoma Risk  Prediction App")
 # Load the trained logistic regression model
 try:
     with open('log_reg_model2.pkl', 'rb') as file:
-        logreg = pickle.load(file)
+        log_reg_model2 = pickle.load(file)
 except FileNotFoundError:
     st.error("Model file 'log_reg_model2.pkl' not found. Please ensure it is in the same directory.")
     st.stop()
@@ -129,6 +129,7 @@ st.write("""
 
 
 # %%
+
 
 
 
