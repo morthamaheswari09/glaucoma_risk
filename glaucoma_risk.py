@@ -4,7 +4,8 @@ import streamlit as st # streamlit is an py lib to create web applications
 import pandas as pd
 import pickle
 import numpy as np
-from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import LabelEncoder , MinMaxScaler
+
 
 # Set page title
 st.title("Glaucoma Risk  Prediction App")
@@ -22,6 +23,8 @@ label_encoder = LabelEncoder()
 label_encoder.classes_ = np.array(['Primary Open-Angle Glaucoma', 'Juvenile Glaucoma' ,'Congenital Glaucoma',
  'Normal-Tension Glaucoma' ,'Angle-Closure Glaucoma', 'Secondary Glaucoma'])  # Adjust based on notebook's encoding
 
+scaler = MinMaxScaler() 
+scaler.fit([[18, 10.0, 0.0, 500.0], [59, 25.0, 1.0, 600.0]])
 # Sidebar for user inputs
 st.sidebar.header("Enter Patient Details")
 
@@ -122,13 +125,14 @@ st.write("""
 1. Use the sidebar to enter the patient's details.
 2. Adjust the sliders for numerical features like Age, IOP , etc.
 3. Select appropriate options for Gender, Diagnosis, Angle Closure Status.
-4. Click the 'Predict' button to see the predicted sleep disorder.
+4. Click the 'Predict' button to see the predicted Glaucoma Risk.
 """)
 
 
 
 
 # %%
+
 
 
 
