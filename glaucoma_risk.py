@@ -19,8 +19,8 @@ except FileNotFoundError:
 
 # Define the label encoder for decoding predictions
 label_encoder = LabelEncoder()
-label_encoder.classes_ = np.array(['Primary Open-Angle Glaucoma' 'Juvenile Glaucoma' 'Congenital Glaucoma'
- 'Normal-Tension Glaucoma' 'Angle-Closure Glaucoma' 'Secondary Glaucoma'])  # Adjust based on notebook's encoding
+label_encoder.classes_ = np.array(['Primary Open-Angle Glaucoma', 'Juvenile Glaucoma' ,'Congenital Glaucoma',
+ 'Normal-Tension Glaucoma' ,'Angle-Closure Glaucoma', 'Secondary Glaucoma'])  # Adjust based on notebook's encoding
 
 # Sidebar for user inputs
 st.sidebar.header("Enter Patient Details")
@@ -129,6 +129,7 @@ st.write("""
 
 
 # %%
+
 
 
 
